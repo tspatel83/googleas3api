@@ -1,0 +1,15 @@
+#labels howtouse,as3,example
+#Example on how to use this library
+
+= Little example code =
+{{{{
+var googleWebSearch:GoogleWebSearch=new GoogleWebSearch();
+googleWebSearch.search(txtInput.text,0,lang);
+googleWebSearch.addEventListener(GoogleSearchEvent.WEB_SEARCH_RESULT,onWebResults) ;
+
+private function onWebResults(e:GoogleSearchEvent):void{
+for each (var result:GoogleWebItem in e.data as Array){
+trace(result.title, result.url)
+}
+}
+}}}}
