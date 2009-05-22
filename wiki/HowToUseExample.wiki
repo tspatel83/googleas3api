@@ -13,7 +13,7 @@ private function onWebResults(e:GoogleSearchEvent):void{
 	trace("Current page index: "+resultObject.currentPageIndex)
 	trace("Number of pages: "+resultObject.numPages)
 
-	for each (var result:GoogleWebItem in resultObject.results as Array){
+	for each (var result:GoogleWebItem in resultObject.results){
 		trace(result.title, result.url)
 	}
 
