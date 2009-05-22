@@ -8,18 +8,18 @@ googleWebSearch.search(txtInput.text,0,lang);
 googleWebSearch.addEventListener(GoogleSearchEvent.WEB_SEARCH_RESULT,onWebResults) ;
 
 private function onWebResults(e:GoogleSearchEvent):void{
-      var resultObject:GoogleSearchResult=e.data as GoogleSearchResult
-       trace("Estimated Number of Results: "+resultObject.estimatedNumResults)
-       trace("Current page index: "+resultObject.currentPageIndex)
-       trace("Number of pages: "+resultObject.numPages)
-      
-       for each (var result:GoogleWebItem in resultObject.results as Array){
-           trace(result.title, result.url)
-       }
+	var resultObject:GoogleSearchResult=e.data as GoogleSearchResult
+	trace("Estimated Number of Results: "+resultObject.estimatedNumResults)
+	trace("Current page index: "+resultObject.currentPageIndex)
+	trace("Number of pages: "+resultObject.numPages)
 
-      /* Before version 2.0.1
-      * for each (var result:GoogleWebItem in e.data as Array){
-      *      trace(result.title, result.url)
-      * }*/
+	for each (var result:GoogleWebItem in resultObject.results as Array){
+		trace(result.title, result.url)
+	}
+
+	/* Before version 2.0.1
+	* for each (var result:GoogleWebItem in e.data as Array){
+	*      trace(result.title, result.url)
+	* }*/
 }
 }}}
