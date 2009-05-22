@@ -1,7 +1,7 @@
 #labels howtouse,as3,example
 #Example on how to use this library
 
-= Little example code =
+== Little example code ==
 {{{
 var googleWebSearch:GoogleWebSearch=new GoogleWebSearch();
 googleWebSearch.search(txtInput.text,0,lang);
