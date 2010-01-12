@@ -7,6 +7,9 @@ var googleWebSearch:GoogleWebSearch=new GoogleWebSearch();
 googleWebSearch.search(txtInput.text,0,lang);
 googleWebSearch.addEventListener(GoogleSearchEvent.WEB_SEARCH_RESULT,onWebResults) ;
 
+//If you want to catch the API errors yourself:
+googleWebSearch.addEventListener(GoogleAPIErrorEvent.API_ERROR,onAPIError)
+
 private function onWebResults(e:GoogleSearchEvent):void{
 	var resultObject:GoogleSearchResult=e.data as GoogleSearchResult
 	trace("Estimated Number of Results: "+resultObject.estimatedNumResults)
@@ -21,5 +24,9 @@ private function onWebResults(e:GoogleSearchEvent):void{
 	* for each (var result:GoogleWebItem in e.data as Array){
 	*      trace(result.title, result.url)
 	* }*/
+}
+
+private function onAPIError(evt:GoogleAPIErrorEvent):void{
+	trace("An API error has occured: " + evt.responseDetails, "responseStatus was: " + evt.responseStatus);
 }
 }}}
