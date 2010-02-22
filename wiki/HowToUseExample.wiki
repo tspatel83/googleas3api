@@ -5,12 +5,12 @@
 {{{
 var googleWebSearch:GoogleWebSearch=new GoogleWebSearch();
 googleWebSearch.search(txtInput.text,0,lang);
-googleWebSearch.addEventListener(GoogleSearchEvent.WEB_SEARCH_RESULT,onWebResults) ;
+googleWebSearch.addEventListener(GoogleApiEvent.WEB_SEARCH_RESULT,onWebResults) ;
 
 //If you want to catch the API errors yourself:
 googleWebSearch.addEventListener(GoogleAPIErrorEvent.API_ERROR,onAPIError)
 
-private function onWebResults(e:GoogleSearchEvent):void{
+private function onWebResults(e: GoogleApiEvent):void{
 	var resultObject:GoogleSearchResult=e.data as GoogleSearchResult
 	trace("Estimated Number of Results: "+resultObject.estimatedNumResults)
 	trace("Current page index: "+resultObject.currentPageIndex)
@@ -20,10 +20,6 @@ private function onWebResults(e:GoogleSearchEvent):void{
 		trace(result.title, result.url)
 	}
 
-	/* Before version 2.0.1
-	* for each (var result:GoogleWebItem in e.data as Array){
-	*      trace(result.title, result.url)
-	* }*/
 }
 
 private function onAPIError(evt:GoogleAPIErrorEvent):void{
