@@ -33,6 +33,31 @@ package be.boulevart.google.api.dictionary {
 
 	/** GoogleDictionary - Find definitions, meanings,... for a keyword<br/>
 	 * Based upon an unofficial API, you are solely responsible for its use, and I urge you not to abuse the Google Dictionary API or use it for commercial projects.
+	 * @example
+	 * <listing version="3.0">
+	   import be.boulevart.google.api.dictionary.GoogleDictionary;
+	   import be.boulevart.google.api.dictionary.data.GoogleDictionaryResult;
+	   import be.boulevart.google.events.GoogleAPIErrorEvent;
+	   import be.boulevart.google.events.GoogleAPIEvent;
+	   import be.boulevart.google.utils.LanguageCodes;
+
+	   var dictionary:GoogleDictionary = new GoogleDictionary();
+	   dictionary.search("monkey", LanguageCodes.ENGLISH, LanguageCodes.ENGLISH);
+	   dictionary.addEventListener(GoogleAPIEvent.DICTIONARY_RESULT, onDictionaryResult);
+	   dictionary.addEventListener(GoogleAPIEvent.ON_ERROR, onError);
+	   dictionary.addEventListener(GoogleAPIErrorEvent.API_ERROR, onAPIError);
+
+	   private function onTestResult(e:GoogleAPIEvent):void {
+	   var result:GoogleDictionaryResult=GoogleDictionaryResult(e.data);
+	   }
+
+	   private function onError(e:GoogleAPIEvent):void {
+	   trace(e.data);
+	   }
+
+	   private function onApiError(e:GoogleAPIErrorEvent):void {
+	   trace(e.responseStatus);
+	   }</listing>
 	 * @author Joris Timmerman
 	 */
 	public class GoogleDictionary extends EventDispatcher {
