@@ -1,0 +1,1 @@
+package be.boulevart.google.api.search.images.data.types {	/**	 * @author joris	 */	public class GoogleImageSafeMode {		public static const ACTIVE:String = "active";		public static const MODERATE:String = "moderate";		public static const OFF:String = "off";	}}
