@@ -47,6 +47,7 @@ package be.boulevart.google.api.weather {
 		 * @param langCode code for the language to return data in, f.e 'nl'
 		 */
 		public function search(city:String, country:String = "", langCode:String = ""):void {
+			trace("[WARNING] The function you are using is based upon an unofficial API, you are solely responsible for its use, and I urge you not to abuse the Google Weather API or use it in commercial projects.");
 
 			var url:String = GoogleAPIServiceURL.WEATHER_SERVICE;
 

@@ -45,6 +45,33 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
   Based upon an unofficial API, you are solely responsible for its use, and I urge you not to abuse the Google Dictionary API or use it for commercial projects.
   <p></p>
 <br>
+<span class="label">Example</span>
+<br>  <div class='listing'><pre>
+    import be.boulevart.google.api.dictionary.GoogleDictionary;
+    import be.boulevart.google.api.dictionary.data.GoogleDictionaryResult;
+    import be.boulevart.google.events.GoogleAPIErrorEvent;
+    import be.boulevart.google.events.GoogleAPIEvent;
+    import be.boulevart.google.utils.LanguageCodes;
+
+    var dictionary:GoogleDictionary = new GoogleDictionary();
+    dictionary.search("monkey", LanguageCodes.ENGLISH, LanguageCodes.ENGLISH);
+    dictionary.addEventListener(GoogleAPIEvent.DICTIONARY_RESULT, onDictionaryResult);
+    dictionary.addEventListener(GoogleAPIEvent.ON_ERROR, onError);
+    dictionary.addEventListener(GoogleAPIErrorEvent.API_ERROR, onAPIError);
+
+    private function onTestResult(e:GoogleAPIEvent):void {
+    var result:GoogleDictionaryResult=GoogleDictionaryResult(e.data);
+    }
+
+    private function onError(e:GoogleAPIEvent):void {
+    trace(e.data);
+    }
+
+    private function onApiError(e:GoogleAPIErrorEvent):void {
+    trace(e.responseStatus);
+    }</pre></div>
+  <p></p>
+<br>
 <hr>
 </div>
 <a name="methodSummary"></a>
