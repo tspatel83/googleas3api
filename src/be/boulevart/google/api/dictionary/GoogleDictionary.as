@@ -69,6 +69,8 @@ package be.boulevart.google.api.dictionary {
 		 * @param targetLanguage Target language of keyword and descriptions (optional)<br/>default: value of source language
 		 */
 		public function search(searchTerm:String, sourceLanguage:String, targetLanguage:String = ""):void {
+			trace("[WARNING] The function you are using is based upon an unofficial API, you are solely responsible for its use, and I urge you not to abuse the Google Dictionary API or use it in commercial projects.");
+
 			var serviceURL:String = GoogleAPIServiceURL.GOOGLE_DICTIONARY_SERVICE;
 			var loader:URLLoader = new URLLoader();
 			var request:URLRequest = new URLRequest(serviceURL);

@@ -17,9 +17,9 @@ package be.boulevart.google.api.suggest {
 	import be.boulevart.google.api.suggest.data.GoogleSuggestion;
 	import be.boulevart.google.events.GoogleAPIEvent;
 	import be.boulevart.google.utils.APIUtil;
-	
+
 	import com.adobe.utils.StringUtil;
-	
+
 	import flash.events.Event;
 	import flash.events.EventDispatcher;
 	import flash.events.IOErrorEvent;
@@ -31,11 +31,13 @@ package be.boulevart.google.api.suggest {
 	public class GoogleSuggest extends EventDispatcher {
 		/**
 		 * Start search operation for suggestions.<br/>
-		 * Based upon an unofficial API, you are solely responsible for its use, and I urge you not to abuse the Google Calculator Currency API or use it for commercial projects.
+		 * Based upon an unofficial API, you are solely responsible for its use, and I urge you not to abuse the Google Suggest API or use it for commercial projects.
 		 * Will deliver 10 results max
 		 * @param searchTerm search string, get suggestions for...
 		 */
 		public function suggest(searchTerm:String, languageCode:String = ""):void {
+			trace("[WARNING] The function you are using is based upon an unofficial API, you are solely responsible for its use, and I urge you not to abuse the Google Suggest API or use it in commercial projects.");
+
 			var serviceURL:String = GoogleAPIServiceURL.SUGGEST_SERVICE;
 
 			var loader:URLLoader = new URLLoader();

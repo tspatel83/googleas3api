@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<flexLibProperties includeAllClasses="true" version="3">
+  <includeClasses>
+    <classEntry path="com.google.settings.LanguageCode"/>
+    <classEntry path="be.boulevart.google.utils.CurrencyCodes"/>
+    <classEntry path="be.boulevart.google.api.dictionary.GoogleDictionary"/>
+    <classEntry path="be.boulevart.google.utils.APIUtil"/>
+    <classEntry path="be.boulevart.google.api.dictionary.data.GoogleDictionaryResult"/>
+    <classEntry path="be.boulevart.google.api.dictionary.data.GoogleDictionaryWebDefinition"/>
+    <classEntry path="be.boulevart.google.api.dictionary.data.GoogleDictionaryEntry"/>
+    <classEntry path="be.boulevart.google.api.dictionary.data.GoogleDictionaryTerm"/>
+  </includeClasses>
+  <includeResources/>
+  <namespaceManifests/>
+</flexLibProperties>
