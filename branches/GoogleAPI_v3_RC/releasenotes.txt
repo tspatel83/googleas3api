@@ -4,6 +4,7 @@ Changes:
 General:
 new, smaller, package structure
 Completed ASDocs 
+General review and update of parsings
 
 API Settings (be.boulevart.google.api.core.GoogleAPISettings):
 	Set a main language for the entire API
@@ -20,6 +21,3 @@ Google Calculator
 Google Currency Converter
 	Convert currency values using Google Currency Converter with the latest exchange rates
 	
-Google Dictionary
-	Look up keywords using the Google Dictionary API
-
