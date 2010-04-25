@@ -7,6 +7,7 @@ package be.boulevart.google.api.search {
 		private var _estimatedNumResults:int = 0;
 		private var _currentPageIndex:int = 0;
 		private var _pages:Array = [];
+		private var _moreResultsUrl:String;
 
 		/**
 		 * Array of result objects, see the classes where you queried for more information
@@ -50,6 +51,18 @@ package be.boulevart.google.api.search {
 		public function set pages(value:Array):void {
 			_pages = value;
 		}
+
+		/**
+		 * More results URL
+		 */
+		public function get moreResultsUrl():String {
+			return _moreResultsUrl;
+		}
+
+		public function set moreResultsUrl(value:String):void {
+			_moreResultsUrl = value;
+		}
+
 
 	}
 }
