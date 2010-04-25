@@ -1,9 +1,12 @@
 package be.boulevart.google.api.search {
-	public class GoogleSearchResult {
+
+	/**
+	 * Result object containing the result object of a search query (Google Search)
+	 */	public class GoogleSearchResult {
 		private var _results:Array = [];
 		private var _estimatedNumResults:int = 0;
 		private var _currentPageIndex:int = 0;
-		private var _numPages:int = 1;
+		private var _pages:Array = [];
 
 		/**
 		 * Array of result objects, see the classes where you queried for more information
@@ -34,12 +37,19 @@ package be.boulevart.google.api.search {
 
 		/**
 		 * Number of pages available
-		 * @default 1
 		 */		public function get numPages():int {
-			return _numPages;
+			return pages.length;
 		}
-		public function set numPages(np:int):void {
-			_numPages = np;
+		/**
+		 * All pages available, containing GoogleSearchResultPage objects
+		 */
+		public function get pages():Array {
+			return _pages;
 		}
+
+		public function set pages(value:Array):void {
+			_pages = value;
+		}
+
 	}
 }
